@@ -1,6 +1,6 @@
 #include <SoftwareSerial.h>                            // import the serial library
 
-SoftwareSerial Genotronex(12, 10); // RX, TX
+SoftwareSerial Soft(12, 10); // RX, TX
 
                                                    // Declarations 
 /**************************************************************************************************************************************/
@@ -21,8 +21,8 @@ void setup()
 {
   
   // put your setup code here, to run once:
-  Genotronex.begin(9600);
-  Genotronex.println("Bluetooth On please wait....");
+  Soft.begin(9600);
+  Soft.println("Bluetooth On please wait....");
 
 // declare the ledPin as an OUTPUT:
    Serial.begin(9600);
@@ -52,7 +52,7 @@ void loop() {
         {
                                                                              // Compare the current value to that of the thresh hold value    
       
-             Genotronex.println("1" );  
+             Soft.println("1" );  
     
                      if (ledState == LOW)                               // if the LED is off turn it on and vice-versa:
                         ledState = HIGH;
@@ -65,7 +65,7 @@ void loop() {
                                                        // Compare the current value to that of the thresh hold value
     
       
-      Genotronex.println("0" );  
+      Soft.println("0" );  
     
      ledState = LOW;
 
